@@ -1,0 +1,21 @@
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to the longest word-game!</h1>
+        <p class="text-center">Here is your grid:</p>
+        <div class="grid mx-auto" style="max-width: 300px;">
+
+        <% @random_letters.each do |letter| %>
+        <div><%= letter %></div>
+        <% end %>
+        </div>
+        <p class="text-center">*****************************************************</p>
+        <p class="text-center">What is your longest word?</p>
+        <form id="word-form" class="text-center" action="/score" data-turbo="false" >
+            <div class="form-group" >
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <%= hidden_field_tag :random_letters, @random_letters %>
+
+                <input type="text" id="user-word" name="user_word" class="form-control d-inline-block w-auto" placeholder="Enter your word" required>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <div><%= @score %></div>

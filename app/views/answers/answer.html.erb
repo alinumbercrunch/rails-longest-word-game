@@ -1,0 +1,30 @@
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to the longest word-game!</h1>
+        <p class="text-center">Here is your grid:</p>
+        <div class="grid mx-auto" style="max-width: 300px;">
+            <div>Q</div>
+            <div>F</div>
+            <div>M</div>
+            <div>R</div>
+            <div>K</div>
+            <div>L</div>
+            <div>I</div>
+            <div>T</div>
+            <div>P</div>
+        </div>
+        <p class="text-center">*****************************************************</p>
+        <p class="text-center">What is your longest word?</p>
+        <form id="word-form" class="text-center">
+            <div class="form-group">
+                <input type="text" id="user-word" name="user-word" class="form-control d-inline-block w-auto" placeholder="Enter your word" required>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <div class="results text-center mt-4">
+            <h2>Now your results</h2>
+            <p>Your word: <strong id="display-word"><%=  @user_answer %></strong></p>
+            <p>Time Taken to answer: <strong id="time-taken">12.07916</strong></p>
+            <p>Your score: <strong id="score">3.194722666666667</strong></p>
+            <p>Message: <strong id="message">Well Done!</strong></p>
+             <%= link_to "Play again", game_url %>
+        </div>
